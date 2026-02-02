@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>币安 (Binance) 2026 专属福利站 | 手续费永久 20% 返现</title>
-    <meta name="description" content="使用 2026 币安邀请码 84991407 注册，立享永久 20% 手续费返现。全球最大加密货币交易所，安全可靠，新手礼包最高 $100。">
-    <meta name="keywords" content="币安注册, 币安邀请码, Binance Referral Code, 币安手续费返现, 加密货币开户, 币安教程 2026">
+    <title>Binance 2026 | Global Promotion Hub</title>
+    <meta name="description" content="Use 2026 Binance referral code 84991407 for lifetime 20% cashback on trading fees. The world's largest exchange with lowest fees.">
+    <meta name="keywords" content="Binance registration, Binance referral code, Binance cashback, crypto exchange, Binance tutorial 2026">
     <style>
         :root {
             --primary: #F3BA2F;
@@ -26,10 +26,11 @@
         header { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2B3139; }
         .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; }
         
+        .lang-switcher { background: #2B3139; color: #fff; border: 1px solid var(--text-dim); padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+
         .hero { padding: 80px 0; text-align: center; }
         h1 { font-size: 48px; margin-bottom: 20px; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* 计算器样式 */
         .calculator {
             background: var(--card-bg);
             padding: 40px;
@@ -70,66 +71,188 @@
         }
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(243, 186, 47, 0.3); }
         
-        footer { text-align: center; padding: 60px 0; color: var(--text-dim); font-size: 14px; }
+        footer { text-align: center; padding: 60px 0; color: var(--text-dim); font-size: 14px; border-top: 1px solid #2B3139; margin-top: 40px;}
+        
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 32px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <a href="#" class="logo">BINANCE PROMO</a>
-            <a href="https://accounts.bsmkweb.com/register?ref=84991407" class="cta-button" style="padding: 10px 20px; font-size: 14px; margin: 0;">注册领 $100</a>
+            <a href="#" class="logo">BINANCE GLOBAL</a>
+            <select class="lang-switcher" onchange="switchLang(this.value)">
+                <option value="zh">简体中文</option>
+                <option value="en">English</option>
+                <option value="tr">Türkçe</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="ru">Русский</option>
+                <option value="pt">Português</option>
+            </select>
         </header>
 
         <section class="hero">
-            <h1>省钱就是赚钱：手续费计算器</h1>
-            <p>使用邀请码 <b style="color:var(--primary)">84991407</b>，立享永久 20% 交易手续费减免。</p>
+            <h1 id="t-h1">省钱就是赚钱：手续费计算器</h1>
+            <p id="t-sub">使用邀请码 <b style="color:var(--primary)">84991407</b>，立享永久 20% 交易手续费减免。</p>
             
             <div class="calculator">
                 <div class="calc-grid">
                     <div>
-                        <label>预计月交易额 (USDT)</label>
-                        <input type="number" id="volume" placeholder="例如: 10000" oninput="calculate()">
-                        <p style="font-size: 12px; color: var(--text-dim);">* 按币安标准手续费 0.1% 计算</p>
+                        <label id="t-input-label">预计月交易额 (USDT)</label>
+                        <input type="number" id="volume" placeholder="10000" oninput="calculate()">
+                        <p id="t-disclaimer" style="font-size: 12px; color: var(--text-dim);">* 按币安标准手续费 0.1% 计算</p>
                     </div>
                     <div class="result-box">
-                        <div>通过本站注册，您每月可省下：</div>
+                        <div id="t-monthly-save">通过本站注册，您每月可省下：</div>
                         <div class="save-amount" id="saved">0.00 USDT</div>
-                        <div style="margin-top: 10px; font-size: 14px;">一年共节省：<span id="yearly" style="color: #fff; font-weight: bold;">0.00</span> USDT</div>
+                        <div style="margin-top: 10px; font-size: 14px;"><span id="t-yearly-save">一年共节省：</span><span id="yearly" style="color: #fff; font-weight: bold;">0.00</span> USDT</div>
                     </div>
                 </div>
-                <a href="https://accounts.bsmkweb.com/register?ref=84991407" class="cta-button">立即开启永久返现账户</a>
+                <a href="https://accounts.bsmkweb.com/register?ref=84991407" class="cta-button" id="t-cta">立即开启永久返现账户</a>
             </div>
         </section>
 
         <section style="padding: 60px 0;">
-            <h2 style="text-align: center;">为什么 2026 年必须选择币安？</h2>
+            <h2 style="text-align: center;" id="t-why-title">为什么 2026 年必须选择币安？</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
                 <div style="background: var(--card-bg); padding: 30px; border-radius: 16px;">
-                    <h3 style="color: var(--primary);">SAFU 安全基金</h3>
-                    <p>您的资产由 10 亿美元规模的备付金全额保护，极端行情也无忧。</p>
+                    <h3 style="color: var(--primary);" id="t-f1-t">SAFU 安全基金</h3>
+                    <p id="t-f1-d">您的资产由 10 亿美元规模的备付金全额保护，极端行情也无忧。</p>
                 </div>
                 <div style="background: var(--card-bg); padding: 30px; border-radius: 16px;">
-                    <h3 style="color: var(--primary);">极致流动性</h3>
-                    <p>全球最大的交易深度，买入卖出无价差，是大额资金的首选平台。</p>
+                    <h3 style="color: var(--primary);" id="t-f2-t">极致流动性</h3>
+                    <p id="t-f2-d">全球最大的交易深度，买入卖出无价差，是大额资金的首选平台。</p>
                 </div>
                 <div style="background: var(--card-bg); padding: 30px; border-radius: 16px;">
-                    <h3 style="color: var(--primary);">打新神器</h3>
-                    <p>Launchpool 平均年化收益大幅领先，持仓 BNB 即可坐享新币红利。</p>
+                    <h3 style="color: var(--primary);" id="t-f3-t">打新神器</h3>
+                    <p id="t-f3-d">Launchpool 平均年化收益大幅领先，持仓 BNB 即可坐享新币红利。</p>
                 </div>
             </div>
         </section>
 
         <footer>
-            <p>本站为币安独立合作伙伴。邀请码：84991407</p>
+            <p id="t-footer">本站为币安独立合作伙伴。邀请码：84991407</p>
             <p>&copy; 2026 Crypto Alpha Hunter. All Rights Reserved.</p>
         </footer>
     </div>
 
     <script>
+        const i18n = {
+            zh: {
+                h1: "省钱就是赚钱：手续费计算器",
+                sub: "使用邀请码 <b style='color:var(--primary)'>84991407</b>，立享永久 20% 交易手续费减免。",
+                inputLabel: "预计月交易额 (USDT)",
+                disclaimer: "* 按币安标准手续费 0.1% 计算",
+                monthlySave: "通过本站注册，您每月可省下：",
+                yearlySave: "一年共节省：",
+                cta: "立即开启永久返现账户",
+                whyTitle: "为什么 2026 年必须选择币安？",
+                f1t: "SAFU 安全基金", f1d: "您的资产由 10 亿美元规模的备付金全额保护，极端行情也无忧。",
+                f2t: "极致流动性", f2d: "全球最大的交易深度，买入卖出无价差，是大额资金的首选平台。",
+                f3t: "打新神器", f3d: "Launchpool 平均年化收益大幅领先，持仓 BNB 即可坐享新币红利。",
+                footer: "本站为币安独立合作伙伴。邀请码：84991407"
+            },
+            en: {
+                h1: "Saving is Earning: Fee Calculator",
+                sub: "Use code <b style='color:var(--primary)'>84991407</b> for lifetime 20% fee rebate.",
+                inputLabel: "Estimated Monthly Volume (USDT)",
+                disclaimer: "* Calculated at Binance standard 0.1% fee",
+                monthlySave: "Register via us to save per month:",
+                yearlySave: "Total Yearly Savings: ",
+                cta: "Open Lifetime Rebate Account",
+                whyTitle: "Why Binance in 2026?",
+                f1t: "SAFU Fund", f1d: "Your assets are fully protected by a $1 billion reserve fund.",
+                f2t: "Top Liquidity", f2d: "Largest trading depth in the world with minimal slippage.",
+                f3t: "Passive Income", f3d: "Lead in Launchpool APY, hold BNB to earn new tokens.",
+                footer: "Independent Binance Partner. Referral Code: 84991407"
+            },
+            tr: {
+                h1: "Tasarruf Kazançtır: Komisyon Hesaplayıcı",
+                sub: "<b style='color:var(--primary)'>84991407</b> koduyla ömür boyu %20 komisyon iadesi kazanın.",
+                inputLabel: "Tahmini Aylık Hacim (USDT)",
+                disclaimer: "* Binance standart %0.1 komisyon üzerinden hesaplanmıştır",
+                monthlySave: "Bizimle kayıt olarak aylık tasarrufunuz:",
+                yearlySave: "Yıllık Toplam Tasarruf: ",
+                cta: "%20 İade Hesabını Şimdi Aç",
+                whyTitle: "Neden 2026'da Binance?",
+                f1t: "SAFU Fonu", f1d: "Varlıklarınız 1 milyar dolarlık rezerv fonu ile tam koruma altındadır.",
+                f2t: "En İyi Likidite", f2d: "Minimum kayma ile dünyanın en büyük işlem derinliği.",
+                f3t: "Pasif Gelir", f3d: "Launchpool getirilerinde lider, BNB tutarak yeni coinler kazanın.",
+                footer: "Bağımsız Binance Ortağı. Referans Kodu: 84991407"
+            },
+            vi: {
+                h1: "Tiết kiệm là Kiếm tiền: Máy tính phí",
+                sub: "Sử dụng mã <b style='color:var(--primary)'>84991407</b> để nhận hoàn phí 20% trọn đời.",
+                inputLabel: "Khối lượng giao dịch hàng tháng (USDT)",
+                disclaimer: "* Tính theo phí tiêu chuẩn 0.1% của Binance",
+                monthlySave: "Đăng ký qua chúng tôi để tiết kiệm mỗi tháng:",
+                yearlySave: "Tổng tiết kiệm hàng năm: ",
+                cta: "Mở tài khoản hoàn phí trọn đời",
+                whyTitle: "Tại sao chọn Binance vào năm 2026?",
+                f1t: "Quỹ SAFU", f1d: "Tài sản của bạn được bảo vệ hoàn toàn bởi quỹ dự phòng 1 tỷ USD.",
+                f2t: "Thanh khoản cực cao", f2d: "Độ sâu giao dịch lớn nhất thế giới với độ trượt giá tối thiểu.",
+                f3t: "Thu nhập thụ động", f3d: "Dẫn đầu về lợi nhuận Launchpool, giữ BNB để nhận token mới.",
+                footer: "Đối tác độc lập của Binance. Mã giới thiệu: 84991407"
+            },
+            ru: {
+                h1: "Экономия — это доход: Калькулятор комиссий",
+                sub: "Код <b style='color:var(--primary)'>84991407</b> — возврат 20% комиссий пожизненно.",
+                inputLabel: "Ожидаемый объем в месяц (USDT)",
+                disclaimer: "* Расчет по стандартной комиссии Binance 0.1%",
+                monthlySave: "Ваша экономия в месяц при регистрации у нас:",
+                yearlySave: "Общая экономия за год: ",
+                cta: "Открыть счет с кэшбэком",
+                whyTitle: "Почему Binance в 2026 году?",
+                f1t: "Фонд SAFU", f1d: "Ваши активы защищены резервным фондом в 1 миллиард долларов.",
+                f2t: "Высшая ликвидность", f2d: "Самый глубокий стакан в мире с минимальным проскальзыванием.",
+                f3t: "Пассивный доход", f3d: "Лидер по доходности Launchpool, держите BNB и получайте токены.",
+                footer: "Независимый партнер Binance. Реферальный код: 84991407"
+            },
+            pt: {
+                h1: "Economizar é Ganhar: Calculadora de Taxas",
+                sub: "Use o código <b style='color:var(--primary)'>84991407</b> para 20% de reembolso vitalício.",
+                inputLabel: "Volume Mensal Estimado (USDT)",
+                disclaimer: "* Calculado com a taxa padrão da Binance de 0,1%",
+                monthlySave: "Registre-se conosco e economize por mês:",
+                yearlySave: "Economia Total Anual: ",
+                cta: "Abrir Conta com Reembolso Vitalício",
+                whyTitle: "Por que a Binance em 2026?",
+                f1t: "Fundo SAFU", f1d: "Seus ativos estão totalmente protegidos por um fundo de reserva de US$ 1 bilhão.",
+                f2t: "Alta Liquidez", f2d: "Maior profundidade de negociação do mundo com slippage mínimo.",
+                f3t: "Renda Passiva", f3d: "Líder em APY no Launchpool, segure BNB para ganhar novos tokens.",
+                footer: "Parceiro Independente Binance. Código de Referência: 84991407"
+            }
+        };
+
+        let currentLang = 'zh';
+
+        function switchLang(lang) {
+            currentLang = lang;
+            const data = i18n[lang];
+            document.getElementById('t-h1').innerText = data.h1;
+            document.getElementById('t-sub').innerHTML = data.sub;
+            document.getElementById('t-input-label').innerText = data.inputLabel;
+            document.getElementById('t-disclaimer').innerText = data.disclaimer;
+            document.getElementById('t-monthly-save').innerText = data.monthlySave;
+            document.getElementById('t-yearly-save').innerText = data.yearlySave;
+            document.getElementById('t-cta').innerText = data.cta;
+            document.getElementById('t-why-title').innerText = data.whyTitle;
+            document.getElementById('t-f1-t').innerText = data.f1t;
+            document.getElementById('t-f1-d').innerText = data.f1d;
+            document.getElementById('t-f2-t').innerText = data.f2t;
+            document.getElementById('t-f2-d').innerText = data.f2d;
+            document.getElementById('t-f3-t').innerText = data.f3t;
+            document.getElementById('t-f3-d').innerText = data.f3d;
+            document.getElementById('t-footer').innerText = data.footer;
+            calculate();
+        }
+
         function calculate() {
             const vol = document.getElementById('volume').value || 0;
-            const fee = vol * 0.001; // 标准手续费 0.1%
-            const saved = fee * 0.2; // 20% 返现
+            const fee = vol * 0.001; 
+            const saved = fee * 0.2; 
             document.getElementById('saved').innerText = saved.toFixed(2) + ' USDT';
             document.getElementById('yearly').innerText = (saved * 12).toFixed(2);
         }
